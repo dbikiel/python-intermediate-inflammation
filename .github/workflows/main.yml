@@ -4,7 +4,7 @@ on: push
 
 # now define a single job 'build' (but could define more)
 jobs:
-
+  example_matrix:
   strategy:
       matrix:
         os: [ ubuntu-latest, macos-latest, windows-latest ]
