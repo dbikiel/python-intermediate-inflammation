@@ -55,7 +55,13 @@ def patient_normalise(data):
     NaN values are ignored, and normalised to 0.
 
     Negative values are not allowed
+
+    data must be an ndarray
     """
+    if not isinstance(data, np.ndarray):
+        raise TypeError('data must be an ndarray')
+    if len(data.shape) != 2:
+        raise ValueError('inflammation array should be 2-dimensional')
     if np.any(data < 0):
         raise ValueError('Inflammation values should not be negative')
 
